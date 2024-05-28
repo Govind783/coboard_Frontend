@@ -74,6 +74,7 @@ const WorkspaceSidebar = () => {
             {workspaces?.workspace_details?.map((item, index) => {
               return (
                 <TooltipComponent
+                key={index}
                   label={
                     <div
                       onClick={() => {

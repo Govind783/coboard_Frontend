@@ -196,7 +196,7 @@ const Hero = () => {
                 <div className="w-full h-full flex gap-7 flex-col items-start">
                   {teamMembersList.map((member, index) => {
                     return (
-                      <div className="flex items-center justify-between w-full flex-wrap">
+                      <div key={index} className="flex items-center justify-between w-full flex-wrap">
                         <div className="flex items-center gap-4">
                           <Image
                             src={member.avatar}
@@ -312,7 +312,7 @@ const Hero = () => {
                 <div className="w-full h-full flex gap-7 flex-col items-start">
                   {canViewOrEditList.map((member, index) => {
                     return (
-                      <div className="flex items-center justify-between w-full">
+                      <div key={index} className="flex items-center justify-between w-full">
                         <div className="flex items-center gap-4">
                           <Image
                             src={member.avatar}
