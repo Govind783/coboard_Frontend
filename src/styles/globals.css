@@ -1,0 +1,261 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+html,
+:root {
+  height: 100%;
+}
+
+.secondaryTextColorGray {
+  color: rgb(161, 161, 170);
+}
+
+body {
+  font-family: "Inter", sans-serif !important;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 10% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 240 10% 3.9%;
+  --primary: 240 5.9% 10%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 240 4.8% 95.9%;
+  --secondary-foreground: 240 5.9% 10%;
+  --muted: 240 4.8% 95.9%;
+  --muted-foreground: 240 3.8% 46.1%;
+  --accent: 240 4.8% 95.9%;
+  --accent-foreground: 240 5.9% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 5.9% 90%;
+  --input: 240 5.9% 90%;
+  --ring: 240 5.9% 10%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+}
+
+.linear-wipe {
+  text-align: center;
+  background: linear-gradient(
+    to right,
+    rgba(215, 215, 215, 0.889) 20%,
+    #ccc 40%,
+    #ccc 60%,
+    #fff 80%
+  );
+  /* MORE SUBTEL */
+  /* background: linear-gradient(to right, rgba(215, 215, 215, 0.889) 20%, #8c8b8b 40%, #CCC 60%, #FFF 80%);  distincly visible  */
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shine 0.8s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.underline-animation {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.underline-animation::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  border-radius: 5px;
+  height: 0.05em;
+  bottom: 0;
+  left: 0;
+  background: currentcolor;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.underline-animation:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.noTextDecoration {
+  text-decoration: none;
+}
+
+#__next {
+  height: 100%;
+  scrollbar-width: none !important;
+}
+
+.hover-fill-white:hover .FiStar {
+  fill: rgba(255, 255, 255, 0.83);
+  transition: all ease 0.3s;
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.5); /* transparent black background */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffffed; /* white color for the scrollbar handle */
+  border-radius: 5px; /* round edges for the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #f0f0f0; /* lighter shade of white on hover */
+}
+
+.workspaceDashboardParentDiv {
+  scrollbar-width: none !important;
+}
+
+.excalidraw .sidebar-trigger {
+  display: none !important;
+}
+
+@media (min-width: 1800px) {
+  .largeContainer {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.slideFromUpForCallNotification {
+  animation: slideFromUpForCallNotification 0.5s ease forwards;
+}
+
+@keyframes slideFromUpForCallNotification {
+  0% {
+    transform: translateY(-6rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.lk-grid-layout {
+  border-radius: 8px;
+  background-color: #242121;
+  border: 2px solid #f31010;
+}
+
+.lk-participant-tile {
+  width: 5rem;
+}
+.lk-control-bar {
+  /* flex-wrap: wrap; */
+  justify-content: flex-start;
+}
+
+.slideDown {
+  animation: slideDown 0.5s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-30rem);
+  }
+}
+
+.lk-participant-name {
+  font-size: 11px !important;
+}
+.lk-room-container {
+  border-radius: 10px !important;
+}
+
+/* hamburger of canvas */
+.excalidraw .main-menu-trigger {
+  display: none !important;
+}
+.bn-editor{
+  background-color: #000 !important;
+  height: 40rem;
+  overflow-y: auto;
+  width: 90%;
+  border: 1px solid gray;
+  padding-top: 1rem;
+}
+
+.m_b34414df {
+  position: relative !important;
+  animation: m_f8e89c4b 1.2s linear infinite !important;
+
+}
+
+.m_b34414df::after {
+  content: "" !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  display: block !important;
+  width: var(--loader-size) !important;
+  height: var(--loader-size) !important;
+  border-radius: 50% !important;
+  border: calc(var(--loader-size) / 8) solid transparent !important;
+  border-top-color: #f0f0f0 !important;
+  animation: m_f8e89c4b 1.2s linear infinite !important;
+}
+
+@keyframes m_f8e89c4b {
+  to {
+      transform: rotate(360deg) !important;
+  }
+}
+.mantine-Overlay-root{
+  background-color: black !important;
+}
+
+.bn-container{
+  margin-top: 3rem;
+  padding-bottom: 1.8rem;
+}
+
+.bn-drag-handle{
+  display: none !important;
+}
