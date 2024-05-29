@@ -71,7 +71,7 @@ https://github.com/Govind783/coboard_Frontend/assets/106112839/30ff22a6-116e-4c6
 ![Canvas and Editor 4](https://live.staticflickr.com/31337/53753401213_5c78acd616_b.jpg)
 
 ### Canvas and Editor in the Screens of 2 Different Users
-- **User 1**: ![User 1](https://live.staticflickr.com/65535/53753536964_6356c8512c_b.jpg)
+- **User 1**: ![User 1](https://live.staticflickr.com/65535/53753624485_f849500686_b.jpg)
 - **User 2**: ![User 2](https://live.staticflickr.com/65535/53753537109_b57c44b8a3_b.jpg)
 
 ### Call-In Feature
