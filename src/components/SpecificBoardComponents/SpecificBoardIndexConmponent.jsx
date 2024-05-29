@@ -30,7 +30,7 @@ const Excalidraw = dynamic(
   },
 );
 
-const socketState = io("http://127.0.0.1:5000", {
+const socketState = io(backendDomainHandler(), {
   query: {
     user_id: getCookiesNext("userId"),
   },

@@ -77,10 +77,15 @@ const WorkspaceManagerIndex = () => {
     } catch (err) {
       setLoading(false);
       console.log(err, "catch block");
-      // toast({
-      //   title: "Error loading Workspaces",
-      //   variant: "destructive",
-      // })
+      if (err.data.response.message === "User not found") {
+        setdoesUsersWorkspaceAndBoardsExist(false);
+      } else {
+        toast({
+          title: "Error loading Workspaces",
+          variant: "destructive",
+        })
+      }
+
     }
   };
 
