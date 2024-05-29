@@ -4,7 +4,13 @@ import { useRouter } from "next/router"
 
 
 export const backendDomainHandler = () => {
-  return 'http://127.0.0.1:5000'
+  if(typeof window !== 'undefined') {
+    if(window.location.hostname === 'localhost') {
+      return "http://127.0.0.1:5000"
+    }else{
+      return process.env.BACKEND_URL
+    }
+  }
 }
 
 // export async function fetchAccessToken() {
