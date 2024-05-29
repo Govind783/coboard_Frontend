@@ -36,6 +36,9 @@ Welcome to Co-Board, an innovative open-source project that combines the best fe
 ## Product Screenshots
 
 ### Landing Page
+
+Here is the [Landing Page Video](https://live.staticflickr.com/video/53753624645/e300610410/1080p.mp4?s=eyJpIjo1Mzc1MzYyNDY0NSwiZSI6MTcxNzAxOTQxNywicyI6ImNlMzU4NjNiNWJkYzFkM2FhZDkyMTY3Mzg2OTdhNWJjMDdlNWVjY2MiLCJ2IjoxfQ)
+
 <video width="640" height="450" controls>
   <source src="https://live.staticflickr.com/video/53753624645/e300610410/1080p.mp4?s=eyJpIjo1Mzc1MzYyNDY0NSwiZSI6MTcxNzAxOTQxNywicyI6ImNlMzU4NjNiNWJkYzFkM2FhZDkyMTY3Mzg2OTdhNWJjMDdlNWVjY2MiLCJ2IjoxfQ" type="video/mp4">
   Your browser does not support the video tag.
