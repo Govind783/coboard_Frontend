@@ -77,7 +77,7 @@ const WorkspaceManagerIndex = () => {
     } catch (err) {
       setLoading(false);
       console.log(err, "catch block");
-      if (err.data.response.message === "User not found") {
+      if (err.response.data.message === "User not found") {
         setdoesUsersWorkspaceAndBoardsExist(false);
       } else {
         toast({
