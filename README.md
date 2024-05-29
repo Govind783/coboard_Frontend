@@ -36,13 +36,7 @@ Welcome to Co-Board, an innovative open-source project that combines the best fe
 ## Product Screenshots
 
 ### Landing Page
-
-Here is the [Landing Page Video](https://live.staticflickr.com/video/53753624645/e300610410/1080p.mp4?s=eyJpIjo1Mzc1MzYyNDY0NSwiZSI6MTcxNzAxOTQxNywicyI6ImNlMzU4NjNiNWJkYzFkM2FhZDkyMTY3Mzg2OTdhNWJjMDdlNWVjY2MiLCJ2IjoxfQ)
-
-<video width="640" height="450" controls>
-  <source src="https://live.staticflickr.com/video/53753624645/e300610410/1080p.mp4?s=eyJpIjo1Mzc1MzYyNDY0NSwiZSI6MTcxNzAxOTQxNywicyI6ImNlMzU4NjNiNWJkYzFkM2FhZDkyMTY3Mzg2OTdhNWJjMDdlNWVjY2MiLCJ2IjoxfQ" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/Govind783/coboard_Frontend/assets/106112839/30ff22a6-116e-4c61-a58b-8f123efff735
 
 
 
@@ -82,10 +76,12 @@ Here is the [Landing Page Video](https://live.staticflickr.com/video/53753624645
 
 ### Call-In Feature
 ![Call-In Feature Image 1](https://live.staticflickr.com/65535/53753624485_f849500686_b.jpg)
-![Call-In Feature Video](https://live.staticflickr.com/video/53753401213/5c78acd616/1080p.mp4?s=eyJpIjo1Mzc1MzQwMTIxMywiZSI6MTcxNzAxOTA1NywicyI6Ijc5YjM4NzVjODMyMWRiZDNjOWQ4MjY1NmZhMWE3MzRjZmU5MDYzNWEiLCJ2IjoxfQ)
+
+https://github.com/Govind783/coboard_Backend/assets/106112839/9adc1766-1f25-49ac-b86f-39928e1c4875
+
 
 ## Additional Links
 
 - Backend Repository: [coboard_Backend](https://github.com/Govind783/coboard_Backend)
 - Follow me on Twitter: [@govind755](https://x.com/govind755)
-- Please star the repo 🌟
+- Please star the repo 🌟🚀
