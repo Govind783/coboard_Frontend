@@ -1,38 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Co-Board
 
-## Getting Started
+## Overview
 
-First, run the development server:
+Welcome to Co-Board, an innovative open-source project that combines the best features of Miro and Notion into one seamless experience. Our platform offers a robust canvas for drawing and brainstorming, alongside a powerful text editor for creating structured content. Whether you're collaborating with a team or working solo, Co-board has everything you need to bring your ideas to life.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Real-Time Collaboration
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- **Instant Updates**: Collaborate in real time with your team. Every change is instantly reflected across all connected devices.
+- **Invite Team Members**: Add colleagues to your workspace effortlessly and work together without missing a beat.
+- **Live Cursor Tracking**: See exactly what your teammates are working on with real-time cursor tracking.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Dynamic Canvas
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Flexible Drawing Tools**: Draw shapes, add text, images, tables, and sticky notes. The canvas is your playground.
+- **Unlimited Creativity**: From brainstorming sessions to detailed diagrams, the sky's the limit with our end-to-end canvas.
+- **Smooth Interactions**: Experience a responsive and intuitive interface designed to keep you focused on your work.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Powerful Notion-Like Editor
 
-## Learn More
+- **Rich Text Formatting**: Utilize headers (H1, H2, H3), paragraphs, lists (ordered and unordered), tables, and more.
+- **Structured Content**: Organize your thoughts and ideas efficiently with a versatile and easy-to-use editor.
+- **Integrated Experience**: Seamlessly switch between the canvas and the editor to create comprehensive documents and plans.
 
-To learn more about Next.js, take a look at the following resources:
+### Advanced Communication Tools
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Call-In Feature**: Initiate voice calls directly from the platform. Select team members, start a call, and collaborate more effectively.
+- **Notifications**: Team members receive notifications for calls, ensuring no one misses important discussions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Web Workers
 
-## Deploy on Vercel
+- Utilize web workers for enhanced performance. Offload complex data-intensive or computation-intensive tasks to separate scripts, keeping the main thread responsive for the editor and canvas.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Product Screenshots
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Landing Page
+![Landing Page Video](https://live.staticflickr.com/video/53753624645/e300610410/1080p.mp4?s=eyJpIjo1Mzc1MzYyNDY0NSwiZSI6MTcxNzAxNzMwNywicyI6IjFiNGQ4YTZkNTg2NWFkNzlhY2UwYmQ4OTgzNTQ5MTJjNDgwYWU0N2IiLCJ2IjoxfQ)
+
+### Create More Boards/Workspaces
+![Create More Boards/Workspaces](https://live.staticflickr.com/65535/53753210141_f751035d4a_h.jpg)
+
+### Invite Team
+![Invite Team](https://live.staticflickr.com/65535/53756064688_3a5d5acc85_h.jpg)
+
+### Workspace Onboarding
+![Workspace Onboarding](https://live.staticflickr.com/65535/53756126208_7e286d74a3_h.jpg)
+
+### Workspace Details
+![Workspace Details](https://live.staticflickr.com/65535/53753400883_a0589ac397_h.jpg)
+
+### In-Depth Settings Modal
+- Mark Board as Favorites
+- View Team Members
+- Invite Members
+- Delete Board
+- Remove Members
+![In-Depth Settings Modal 1](https://live.staticflickr.com/65535/53753536939_35e0c2d69b_h.jpg)
+![In-Depth Settings Modal 2](https://live.staticflickr.com/65535/53753536909_788d2eb3af_h.jpg)
+
+### Starred Boards
+![Starred Boards](https://live.staticflickr.com/65535/53753624375_9ea6e65fd4_h.jpg)
+
+### Canvas and Editor
+![Canvas and Editor 1](https://live.staticflickr.com/65535/53753400948_2cd3d9e8b1_h.jpg)
+![Canvas and Editor 2](https://live.staticflickr.com/65535/53753536964_7282f1fa85_h.jpg)
+![Canvas and Editor 3](https://live.staticflickr.com/65535/53752292672_e81a2e55b9_h.jpg)
+![Canvas and Editor 4](https://live.staticflickr.com/31337/53753401213_5c78acd616_b.jpg)
+
+### Canvas and Editor in the Screens of 2 Different Users
+- **User 1**: ![User 1](https://live.staticflickr.com/65535/53753536964_6356c8512c_b.jpg)
+- **User 2**: ![User 2](https://live.staticflickr.com/65535/53753537109_b57c44b8a3_b.jpg)
+
+### Call-In Feature
+![Call-In Feature Image 1](https://live.staticflickr.com/65535/53753624485_f849500686_b.jpg)
+![Call-In Feature Video](https://live.staticflickr.com/video/53753401213/5c78acd616/1080p.mp4?s=eyJpIjo1Mzc1MzQwMTIxMywiZSI6MTcxNzAxOTA1NywicyI6Ijc5YjM4NzVjODMyMWRiZDNjOWQ4MjY1NmZhMWE3MzRjZmU5MDYzNWEiLCJ2IjoxfQ)
+
+## Additional Links
+
+- Backend Repository: [coboard_Backend](https://github.com/Govind783/coboard_Backend)
+- Follow me on Twitter: [@govind755](https://x.com/govind755)
+- Please star the repo 🌟
