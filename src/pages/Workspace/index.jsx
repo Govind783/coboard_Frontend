@@ -1,8 +1,4 @@
 import React, { useState } from "react";
-// index page for workspace manager
-// where i see the dashboard
-// the left side bar with all the workspaces and boards
-// the right side with the details of the workspace and created boards in that workspace
 import { useToast } from "@/components/ui/use-toast";
 import { useEffect } from "react";
 import { useUser, withPageAuthRequired } from "@auth0/nextjs-auth0/client";
@@ -16,6 +12,7 @@ import {
   setLocalStorageFunction,
 } from "@/cookies/cookiesConfig";
 import { useRouter } from "next/router";
+import { Skeleton } from "@/components/ui/skeleton"
 
 const WorkspaceManagerIndex = () => {
   const { user, error, isLoading } = useUser();
@@ -26,12 +23,14 @@ const WorkspaceManagerIndex = () => {
   ] = useState(true); // FALSE 🌟🌟🌟🌟🌟🌟🌟
   const [flagToRender, setFlagToRender] = useState(false);
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const checkIfUserExistsAndFetchWorkSpaces = async () => {
     const formData = new FormData();
     formData.append("sub", user?.sub);
     // const accessToken = await fetchAccessToken()
     const backendDomain = backendDomainHandler();
+    setLoading(true);
     try {
       const backendResponse = await axios.post(
         `${backendDomain}/fetchUsersWorkspaces`,
@@ -42,7 +41,8 @@ const WorkspaceManagerIndex = () => {
           },
         }
       );
-      console.log(backendResponse);
+      setLoading(false);
+      // console.log(backendResponse);
       if (backendResponse.data.message === "bothExist") {
         console.log(backendResponse.data);
         setdoesUsersWorkspaceAndBoardsExist(true);
@@ -65,7 +65,7 @@ const WorkspaceManagerIndex = () => {
           query: {
             workspaceId:
               backendResponse.data.data.workspace_details[0].workspace_uuid,
-              wokrspaceName: backendResponse.data.data.workspace_name
+            wokrspaceName: backendResponse.data.data.workspace_name
           },
         });
         setFlagToRender(true);
@@ -73,13 +73,13 @@ const WorkspaceManagerIndex = () => {
         setdoesUsersWorkspaceAndBoardsExist(false);
         setFlagToRender(true);
       }
-      console.log(backendResponse.data);
+      // console.log(backendResponse.data);
     } catch (err) {
-      console.log(err, "CETCH BLOCLMERR");
-
+      setLoading(false);
+      console.log(err, "catch block");
       // toast({
-      //     title: "Error",
-      //     description: "An error occured in fetching your workspaces",
+      //   title: "Error loading Workspaces",
+      //   variant: "destructive",
       // })
     }
   };
@@ -92,7 +92,6 @@ const WorkspaceManagerIndex = () => {
   }, []);
 
   useEffect(() => {
-    console.log("user effect ran");
     checkIfUserExistsAndFetchWorkSpaces();
   }, [user.email]);
 
@@ -102,6 +101,11 @@ const WorkspaceManagerIndex = () => {
                 <h2>{user?.name}</h2>
                 <p>{user?.email}</p>
             </div> */}
+      {
+        loading && <div className="w-full h-full flex justify-center items-center">
+          <LoadingSkeleton />
+        </div>
+      }
       {doesUsersWorkspaceAndBoardsExist ? (
         <WorkspaceIndexComponent flagToRender={flagToRender} />
       ) : (
@@ -115,19 +119,23 @@ const WorkspaceManagerIndex = () => {
 };
 
 export default withPageAuthRequired(WorkspaceManagerIndex);
-// .data.data
-// {
-//     "_id": "65c7aa40cf2789eaa78e8e5f",
-//     "board_name": [
-//         "expirement"
-//     ],
-//     "email": "govindganeriwal@gmail.com",
-//     "name": "Govind",
-//     "sub": "google-oauth2|115319505565704843057",
-//     "teamMembers": [],
-//     "user_avatar": "12",
-//     "user_id": "5fe6981d1b68489c8243567ee9b21d72",
-//     "workspace_name": [
-//         "MyClan"
-//     ]
-// }
+
+const LoadingSkeleton = () => {
+  return (
+    <div className="grid grid-cols-2 gap-12 gap-x-40">
+      {
+        Array.from({ length: 8 }).map((_, index) => {
+          return (
+            <div key={index} className="flex items-center space-x-4">
+              <Skeleton className="h-12 w-12 rounded-full" />
+              <div className="space-y-2">
+                <Skeleton className="h-4 w-[250px]" />
+                <Skeleton className="h-4 w-[200px]" />
+              </div>
+            </div>
+          )
+        })
+      }
+    </div>
+  )
+}
