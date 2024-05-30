@@ -85,3 +85,8 @@ https://github.com/Govind783/coboard_Backend/assets/106112839/9adc1766-1f25-49ac
 - Backend Repository: [coboard_Backend](https://github.com/Govind783/coboard_Backend)
 - Follow me on Twitter: [@govind755](https://x.com/govind755)
 - Please star the repo 🌟🚀
+
+
+## Note
+- there are a few parts of the code that i've commented out like pasting an image on the editor as well as canvas as my cloudinary bill was sky rocketing, however these functionalities work absolutely fine, and if you intend to use them you may just comment out the part from both the frontend as well the backend repos and it would work as expected...
+- The frontend code of the project is optimised till a great extent however the delay you might see in loading the state of the canvas, editor, fetching workspaces or any other call to backend is merely because the backend is deplopyed on the free plan of render hence the cold start everytime effects it, a con of the free tier
