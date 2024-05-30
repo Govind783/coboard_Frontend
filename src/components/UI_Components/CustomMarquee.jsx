@@ -9,7 +9,7 @@ const CustomMarquee = () => {
             <div className="flex items-center gap-4">
                 {Array(80).fill(0).map((_, index) => {
                     return (
-                        index % 2 === 0 ? <div className="lg:text-3xl text-sm text-white font-semibold">KEEP</div> : <div className="lg:text-3xl text-sm secondaryTextColorGray font-semibold">BUILDING</div>
+                        index % 2 === 0 ? <div className="lg:text-3xl text-xl text-white font-semibold">KEEP</div> : <div className="lg:text-3xl text-xl secondaryTextColorGray font-semibold">BUILDING</div>
                         // <div className={`text-2xl ${index %2 ===0 ? "text-white" : "secondaryTextCol"} font-semibold`}>BUILD</div>
                     )
                 })}

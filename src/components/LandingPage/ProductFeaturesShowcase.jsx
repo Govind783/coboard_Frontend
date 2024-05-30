@@ -113,7 +113,7 @@ const ProductFeaturesShowcase = () => {
             {/* <Image src={bikeImage} alt='bike' className=' w-[28rem] h-auto' /> */}
           </div>
 
-          <div className='lg:pl-32 w-full'>
+          <div className='lg:pl-32 w-full mt-5 lg:mt-0'>
             <Accordion type="single" collapsible className="w-full border-0">
               {
                 accordionItems.map((item, index) => {

@@ -259,3 +259,9 @@ body {
 .bn-drag-handle{
   display: none !important;
 }
+
+@media(max-width: 768px){
+  .rfm-initial-child-container{
+    height: 6rem;
+  }
+}

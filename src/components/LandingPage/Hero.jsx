@@ -121,19 +121,19 @@ const Hero = () => {
 
   return (
     <div>
-      <div className="w-full text-center pt-24">
+      <div className="w-full text-center lg:pt-24 pt-16">
         <div className="lg:text-6xl text-3xl secondaryTextColorGray">
           Enter with a{" "}
           <span className=" font-semibold  linear-wipe text-white">DREAM</span>{" "}
         </div>
-        <div className="lg:text-6xl text-3xl secondaryTextColorGray mt-4">
+        <div className="lg:text-6xl text-2xl secondaryTextColorGray mt-4">
           Exit with the next BIG{" "}
           <span className=" font-semibold linear-wipe  text-white">THING</span>{" "}
         </div>
         {/* <p className=' text-sm mt-4 text-white'>Build, iterate, and design faster with CoBoard — the visual workspace for innovation.</p> */}
 
-        <div className="flex mt-2 items-center justify-center gap-4 flex-wrap">
-          <div className=" text-sm secondaryTextColorGray">
+        <div className="flex lg:mt-2 mt-8 items-center justify-center lg:gap-4 gap-8 flex-wrap">
+          <div className=" text-sm secondaryTextColorGray px-8 lg:px-0">
             Build, iterate, and design faster{" "}
             <span className=" text-white">
               with CoBoard — the visual workspace for innovation.
@@ -158,7 +158,7 @@ const Hero = () => {
           </Button>
         </div>
 
-        <div className="mt-28">
+        <div className="lg:mt-28 mt-12">
           <div className="flex mb-2 justify-center">
             <div className=" text-xs flex items-center gap-2">
               Rated 4.8+ out of 5,134 reviews on
@@ -196,7 +196,7 @@ const Hero = () => {
                 <div className="w-full h-full flex gap-7 flex-col items-start">
                   {teamMembersList.map((member, index) => {
                     return (
-                      <div key={index} className="flex items-center justify-between w-full flex-wrap">
+                      <div key={index} className="flex items-center justify-between w-full">
                         <div className="flex items-center gap-4">
                           <Image
                             src={member.avatar}
@@ -204,7 +204,7 @@ const Hero = () => {
                           />
                           <div className="flex flex-col w-28 items-start">
                             <p className=" text-sm">{member.name}</p>
-                            <p className="text-xs secondaryTextColorGray">
+                            <p className="text-xs  secondaryTextColorGray">
                               {member.role}
                             </p>
                             <p className="text-xs secondaryTextColorGray">
@@ -320,7 +320,7 @@ const Hero = () => {
                           />
                           <div className="flex flex-col w-28 items-start">
                             <p className=" text-sm">{member.name}</p>
-                            <p className="text-xs secondaryTextColorGray">
+                            <p className="text-xs hidden lg:flex secondaryTextColorGray">
                               {member.name}@gmail.com
                             </p>
                             <p className="text-xs secondaryTextColorGray">
@@ -336,7 +336,7 @@ const Hero = () => {
                                 variant="roundedBorderBtn"
                                 role="combobox"
                                 aria-expanded={member.isOpenFlag}
-                                className="lg:w-[150px] justify-between capitalize"
+                                className="lg:w-[150px] w-[120px] justify-between capitalize"
                                 onClick={() => {
                                   setCanViewOrEditList((prev) => {
                                     const tempList = [...prev];

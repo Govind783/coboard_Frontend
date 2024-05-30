@@ -215,7 +215,7 @@ const Navbar = () => {
             variant=""
             className="w-32 font-semibold"
           >
-            Enter CoBoard
+            Enter Co-Board
           </Button>
         </div>
       </div>

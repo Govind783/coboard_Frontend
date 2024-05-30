@@ -7,7 +7,7 @@ import Image from "next/image";
 
 const FAQ_And_Footer = () => {
   return (
-    <div className="w-full h-full bg-black mt-32">
+    <div className="w-full h-full bg-black lg:mt-32">
       <div className="mt-16">
         <CustomMarquee />
       </div>
