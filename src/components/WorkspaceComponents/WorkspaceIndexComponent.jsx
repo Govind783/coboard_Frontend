@@ -86,23 +86,18 @@ const WorkspaceIndexComponent = ({ flagToRender, successfullyONBoardered }) => {
     // console.log("asdsadasdd");
     if (router.isReady && flagToRender && router.query.workspaceId) {
       if (!getLocalStorageFunction("userWorkspaces")) return;
-      // setUsersBoards(JSON.parse(getLocalStorageFunction("userWorkspaces")));
+
       const allWorkspacesandBoardsData = JSON.parse(
         getLocalStorageFunction("userWorkspaces")
       );
-      // console.log(allWorkspacesandBoardsData, "allWorkspacesandBoardsData");
+
       const details_Of_Current_Workspace =
         allWorkspacesandBoardsData.workspace_details.find(
           (item) => item.workspace_uuid === router.query.workspaceId
         );
-      // console.log(details_Of_Current_Workspace, "details_Of_Current_Workspace");
-      if (!details_Of_Current_Workspace) return;
-      console.log('ran post delete?????????');
-      setUsersBoards(details_Of_Current_Workspace.userBoards);
 
-      //   illustartion:
-      //   listOfTeamIllustartionsForBoards[Math.floor(Math.random() * 9)],
-      // isOpen: false,
+      if (!details_Of_Current_Workspace) return;
+      setUsersBoards(details_Of_Current_Workspace.userBoards);
       setUsersBoards((prev) => {
         const tempState = [...prev];
         tempState.forEach((item) => {
@@ -309,9 +304,3 @@ const WorkspaceIndexComponent = ({ flagToRender, successfullyONBoardered }) => {
 };
 
 export default WorkspaceIndexComponent;
-
-// 🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟🌟
-
-
-
-
