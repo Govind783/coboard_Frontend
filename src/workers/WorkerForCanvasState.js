@@ -1,12 +1,11 @@
 import axios from 'axios';
-import { backendDomainHandler } from '@/generalConfig/BackendAndMiddlewareHelpers';
 
 if (typeof window !== 'undefined') {
     self.onmessage = async function (e) {
         const formData = new FormData();
         formData.append('board_uuid', e.data.board_uuid);
         try {
-            const canvasState = await axios.post(`${backendDomainHandler()}/retrieveCanvasState`, formData, {
+            const canvasState = await axios.post(`${e.data.backendDomain}/retrieveCanvasState`, formData, {
                 headers: { "Content-Type": "application/json" }
             });
             if (canvasState.data.data?.length > 0) {

@@ -56,10 +56,10 @@ const SpecificBoardIndexConmponent = () => {
 
   useEffect(() => {
     (async () => {
-      if (!router.isReady || !excalidrawAPIState) return;
+      if (!router.isReady || !excalidrawAPIState || typeof window === "undefined") return;
       workerRef.current = new Worker(new URL('../../workers/WorkerForCanvasState.js', import.meta.url));
 
-      workerRef.current.postMessage({ board_uuid: router.query.BoardUuid });
+      workerRef.current.postMessage({ board_uuid: router.query.BoardUuid, backendDomain: backendDomainHandler() });
 
       workerRef.current.onmessage = function (e) {
         if (!e.data) return;
