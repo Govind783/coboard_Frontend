@@ -26,7 +26,7 @@ Welcome to Co-Board, an innovative open-source project that combines the best fe
 
 ### Advanced Communication Tools
 
-- **Call-In Feature**: Initiate voice calls directly from the platform. Select team members, start a call, and collaborate more effectively.
+- **Calling Feature**: Initiate voice and video calls directly from the platform. Select team members, start a call, and collaborate more effectively.
 - **Notifications**: Team members receive notifications for calls, ensuring no one misses important discussions.
 
 ### Web Workers
