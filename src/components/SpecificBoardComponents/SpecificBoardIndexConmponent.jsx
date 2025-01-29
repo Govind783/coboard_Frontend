@@ -48,7 +48,6 @@ const SpecificBoardIndexConmponent = () => {
         setIsSaving(false);
     }, 5000);
 };
-console.log(isSaving, 'sss');
 
   useEffect(() => {
     if (router.isReady) {
@@ -140,7 +139,6 @@ console.log(isSaving, 'sss');
 
   const canvasOnChangeHandler = debounce(
     (allElements, setElementsState, versionsMap, callToBackendToUpdateCanvasState) => {
-      console.log('in debounceeeeee log');
       
       // const newIds = new Set(allElements.map(el => el.id));
       const elementsChanged = new Set();
@@ -169,9 +167,7 @@ console.log(isSaving, 'sss');
   );
 
   const handleChange = (elements, appState) => {
-    if (initialLoad.current) return;
-    console.log('outside if');
-    
+    if (initialLoad.current) return;    
     // Check if there are actually any selected elements
     const hasSelectedElements = appState.selectedElementIds && Object.keys(appState.selectedElementIds).length > 0;
     
@@ -181,9 +177,7 @@ console.log(isSaving, 'sss');
       appState.editingElement !== null ||
       appState.pointerButtonDown ||
       hasSelectedElements
-    ) {
-      console.log('inside if');
-      
+    ) {      
       toggleSaveStatusIndicator()
       canvasOnChangeHandler(elements, setElementsState, versionsMap, callToBackendToUpdateCanvasState);
     }
