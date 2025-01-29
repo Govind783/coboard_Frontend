@@ -25,12 +25,9 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import Link from "next/link";
 import { useRouter } from "next/router";
-import { getCookiesNext } from "@/cookies/cookiesConfig";
-import { toast } from "../ui/use-toast";
+import LoginButton from "./LoginButton";
 const Hero = () => {
-  const router = useRouter();
   const frameworks = [
     {
       value: "next.js",
@@ -139,23 +136,7 @@ const Hero = () => {
               with CoBoard — the visual workspace for innovation.
             </span>{" "}
           </div>
-          <Button
-            className="w-32 font-semibold"
-            onClick={() => {
-              if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                return toast({
-                  title: "Please use a desktop to use CoBoard",
-                })
-              }
-              if (getCookiesNext("userEmail")) {
-                router.push("/Workspace");
-              } else {
-                router.push("/api/auth/login");
-              }
-            }}
-          >
-            Join Co-Board
-          </Button>
+          <LoginButton />
         </div>
 
         <div className="lg:mt-28 mt-12">

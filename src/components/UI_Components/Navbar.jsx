@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 // import logo from "../../assets/CoBoardLogo2.png";
 import { Button } from "@/components/ui/button";
@@ -11,10 +11,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import Link from "next/link";
-import { getCookiesNext } from "@/cookies/cookiesConfig";
 import { useRouter } from "next/router";
-import { toast } from "../ui/use-toast";
+import LoginButton from "../LandingPage/LoginButton";
 const Navbar = () => {
   const firstNavItemContents = [
     {
@@ -199,24 +197,7 @@ const Navbar = () => {
             </div>
           </div>
 
-          <Button
-            onClick={() => {
-              if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                return toast({
-                  title: "Please use a desktop to use CoBoard",
-                })
-              }
-              if (getCookiesNext("userEmail") && getCookiesNext("userName")) {
-                router.push("/Workspace");
-              } else {
-                router.push("/api/auth/login");
-              }
-            }}
-            variant=""
-            className="w-32 font-semibold"
-          >
-            Enter Co-Board
-          </Button>
+          <LoginButton />
         </div>
       </div>
     </div>
