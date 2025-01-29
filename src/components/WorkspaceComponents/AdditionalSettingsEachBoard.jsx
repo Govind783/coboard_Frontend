@@ -439,8 +439,7 @@ const AdditionalSettingsEachBoard = ({
                                             setUserIdToRemove(item.user_id)
                                           } else {
                                             toast({
-                                              title: "Really bruh??",
-                                              description: "He's litereally the master admin of this board",
+                                              title: "Cannot remove master admin",
                                             });
                                           }
                                         }}
@@ -450,7 +449,7 @@ const AdditionalSettingsEachBoard = ({
                                     <TooltipContent side={"left"}>
                                       {
                                         item.role === "master_admin"
-                                          ? "Really bruh? He's the master admin"
+                                          ? "They are the master admin"
                                           : "Remove member from board"
                                       }
                                     </TooltipContent>
