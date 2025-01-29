@@ -170,16 +170,19 @@ console.log(isSaving, 'sss');
 
   const handleChange = (elements, appState) => {
     if (initialLoad.current) return;
-    console.log('debug 2 OUTSIDE if');
-    // Checking if the event was triggered by the local user.
+    console.log('outside if');
+    
+    // Check if there are actually any selected elements
+    const hasSelectedElements = appState.selectedElementIds && Object.keys(appState.selectedElementIds).length > 0;
+    
     if (
       appState.draggingElement !== null ||
       appState.resizingElement !== null ||
       appState.editingElement !== null ||
       appState.pointerButtonDown ||
-      appState.selectedElementIds
+      hasSelectedElements
     ) {
-      console.log('debug 1 inside if');
+      console.log('inside if');
       
       toggleSaveStatusIndicator()
       canvasOnChangeHandler(elements, setElementsState, versionsMap, callToBackendToUpdateCanvasState);
