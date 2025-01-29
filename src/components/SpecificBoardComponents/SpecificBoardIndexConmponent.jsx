@@ -37,17 +37,18 @@ const SpecificBoardIndexConmponent = () => {
   const router = useRouter();
   const [excalidrawAPIState, setexcalidrawAPIState] = useState(null);
   const initialLoad = useRef(true);
-  const [hasUnsavedChnages, setHasUnsavedChanges] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);  // Start with false to show green
   const [boardTeamMembers, setBoardTeamMembers] = useState([]);
   const timerID = useRef(null);
 
   const toggleSaveStatusIndicator = () => {
-    setHasUnsavedChanges(true);
+    setIsSaving(true);
     if (timerID.current) clearTimeout(timerID.current);
     timerID.current = setTimeout(() => {
-      setHasUnsavedChanges(false);
+        setIsSaving(false);
     }, 5000);
-  };
+};
+
   useEffect(() => {
     if (router.isReady) {
       socketState.emit("readyToUseApp", { boardUuid: router.query.BoardUuid });
@@ -232,7 +233,7 @@ const SpecificBoardIndexConmponent = () => {
     <div className="w-full h-full">
       <div className="w-full  h-full">
         <div className="fixed -bottom-2 -left-4">
-          <StatusIndicators isSaving={hasUnsavedChnages} />
+          <StatusIndicators isSaving={isSaving} />
         </div>
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel defaultSize={37}>
