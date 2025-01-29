@@ -140,6 +140,8 @@ console.log(isSaving, 'sss');
 
   const canvasOnChangeHandler = debounce(
     (allElements, setElementsState, versionsMap, callToBackendToUpdateCanvasState) => {
+      console.log('in debounceeeeee log');
+      
       // const newIds = new Set(allElements.map(el => el.id));
       const elementsChanged = new Set();
       
@@ -168,7 +170,7 @@ console.log(isSaving, 'sss');
 
   const handleChange = (elements, appState) => {
     if (initialLoad.current) return;
-
+    console.log('debug 2 OUTSIDE if');
     // Checking if the event was triggered by the local user.
     if (
       appState.draggingElement !== null ||
@@ -177,6 +179,9 @@ console.log(isSaving, 'sss');
       appState.pointerButtonDown ||
       appState.selectedElementIds
     ) {
+      console.log('debug 1 inside if');
+      
+      toggleSaveStatusIndicator()
       canvasOnChangeHandler(elements, setElementsState, versionsMap, callToBackendToUpdateCanvasState);
     }
   };
@@ -249,10 +254,7 @@ console.log(isSaving, 'sss');
               }}
               renderTopRightUI={renderTopRightUI}
               excalidrawAPI={(e) => setexcalidrawAPIState(e)}
-              onChange={() => {
-                toggleSaveStatusIndicator();
-                handleChange()
-              }}
+              onChange={handleChange}
               initialData={elementsState}
             />
           </ResizablePanel>
