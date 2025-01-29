@@ -1,12 +1,7 @@
-import { deleteCookiesAndLocalStorageUniversalFN } from "@/cookies/cookiesConfig"
-import { useToast } from "@/components/ui/use-toast"
-import { useRouter } from "next/router"
-
-
 export const backendDomainHandler = () => {
   if(typeof window !== 'undefined') {
     if(window.location.hostname === 'localhost') {
-      return "http://127.0.0.1:5000"
+      return "http://127.0.0.1:5001"
     }else{
       return process.env.BACKEND_URL
     }
