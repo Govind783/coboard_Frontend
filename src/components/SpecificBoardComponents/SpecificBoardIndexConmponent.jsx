@@ -39,7 +39,8 @@ const SpecificBoardIndexConmponent = () => {
   const initialLoad = useRef(true);
   const [hasUnsavedChnages, setHasUnsavedChanges] = useState(false);
   const [boardTeamMembers, setBoardTeamMembers] = useState([]);
-  const timerID = useRef(false);
+  const timerID = useRef(null);
+
   const toggleSaveStatusIndicator = () => {
     setHasUnsavedChanges(true);
     if (timerID.current) clearTimeout(timerID.current);
@@ -139,7 +140,7 @@ const SpecificBoardIndexConmponent = () => {
     (allElements, setElementsState, versionsMap, callToBackendToUpdateCanvasState) => {
       // const newIds = new Set(allElements.map(el => el.id));
       const elementsChanged = new Set();
-      toggleSaveStatusIndicator();
+      
       allElements.forEach((element) => {
         const storedVersion = versionsMap.get(element.id) || 0;
         if (!versionsMap.has(element.id)) {
@@ -174,6 +175,7 @@ const SpecificBoardIndexConmponent = () => {
       appState.pointerButtonDown ||
       appState.selectedElementIds
     ) {
+      toggleSaveStatusIndicator();
       canvasOnChangeHandler(elements, setElementsState, versionsMap, callToBackendToUpdateCanvasState);
     }
   };
@@ -230,7 +232,7 @@ const SpecificBoardIndexConmponent = () => {
     <div className="w-full h-full">
       <div className="w-full  h-full">
         <div className="fixed -bottom-2 -left-4">
-          <StatusIndicators hasSaved={hasUnsavedChnages} />
+          <StatusIndicators isSaving={hasUnsavedChnages} />
         </div>
         <ResizablePanelGroup direction="horizontal">
           <ResizablePanel defaultSize={37}>
@@ -258,11 +260,11 @@ const SpecificBoardIndexConmponent = () => {
 
 export default SpecificBoardIndexConmponent;
 
-const StatusIndicators = memo(({ hasSaved }) => {
+const StatusIndicators = memo(({ isSaving }) => {
   return (
     <div className="flex flex-col space-y-4 p-8 bg-gray-900">
       {/* Saved Status */}
-      {!hasSaved ? (
+      {!isSaving ? (
         <div className="flex items-center space-x-2 bg-green-900/20 rounded-full px-4 py-2 w-fit">
           <div className="relative">
             <div className="w-3 h-3 bg-green-500 rounded-full"></div>
