@@ -48,6 +48,7 @@ const SpecificBoardIndexConmponent = () => {
         setIsSaving(false);
     }, 5000);
 };
+console.log(isSaving, 'sss');
 
   useEffect(() => {
     if (router.isReady) {
@@ -176,7 +177,6 @@ const SpecificBoardIndexConmponent = () => {
       appState.pointerButtonDown ||
       appState.selectedElementIds
     ) {
-      toggleSaveStatusIndicator();
       canvasOnChangeHandler(elements, setElementsState, versionsMap, callToBackendToUpdateCanvasState);
     }
   };
@@ -249,7 +249,10 @@ const SpecificBoardIndexConmponent = () => {
               }}
               renderTopRightUI={renderTopRightUI}
               excalidrawAPI={(e) => setexcalidrawAPIState(e)}
-              onChange={handleChange}
+              onChange={() => {
+                toggleSaveStatusIndicator();
+                handleChange()
+              }}
               initialData={elementsState}
             />
           </ResizablePanel>
