@@ -3,7 +3,7 @@ export const backendDomainHandler = () => {
     if(window.location.hostname === 'localhost') {
       return "http://127.0.0.1:5001"
     }else{
-      return process.env.BACKEND_URL
+      return process.env.BACKEND_URL // vercel not updating url?
     }
   }
 }
